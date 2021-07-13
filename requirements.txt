@@ -1,0 +1,2 @@
+scraperx>=0.5.10
+python-json-logger

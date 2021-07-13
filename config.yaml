@@ -1,0 +1,32 @@
+# If the scraper does not have a custom setting, use the default
+# Any value in the default section can also be set in a specific scraper as well
+default:
+  dispatch:
+    service:
+      type: local
+    ratelimit:
+      type: qps
+      value: 1
+
+  downloader:
+    save_metadata: false
+    save_data:
+      service: local
+
+  extractor:
+    save_data:
+      service: local
+
+
+tf2map_links:
+  downloader:
+    # Use time_downloaded as part of the name since we will always be re-downloading starting at page 1
+    file_template: "source/{scraper_name}/page_{page}_{time_downloaded}.html"
+
+tf2map_details:
+  downloader:
+    file_template: "source/{scraper_name}/{map_id}.html"
+
+  extractor:
+    # Can also download the file to this folder too
+    file_template: "extracted/{scraper_name}/{map_id}/metadata.json"
