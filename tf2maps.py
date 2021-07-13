@@ -4,19 +4,19 @@ from pythonjsonlogger import jsonlogger
 from scraperx import Scraper, run_cli, Dispatch, Download, Extract, run_task
 
 # ## Basic logging
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format='%(asctime)s - %(levelname)s - %(name)s - [%(scraper_name)s] %(message)s'
-# )
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(name)s - [%(scraper_name)s] %(message)s'
+)
 
 # ## Or json logging (has a lot more data)
-root_logger = logging.getLogger()
-root_logger.setLevel(logging.INFO)
-formatter = jsonlogger.JsonFormatter('%(asctime)s %(name)s %(levelname)s %(message)s',
-                                     '%Y-%m-%dT%H:%M:%SZ')
-s_handler = logging.StreamHandler(sys.stdout)
-s_handler.setFormatter(formatter)
-root_logger.addHandler(s_handler)
+# root_logger = logging.getLogger()
+# root_logger.setLevel(logging.INFO)
+# formatter = jsonlogger.JsonFormatter('%(asctime)s %(name)s %(levelname)s %(message)s',
+#                                      '%Y-%m-%dT%H:%M:%SZ')
+# s_handler = logging.StreamHandler(sys.stdout)
+# s_handler.setFormatter(formatter)
+# root_logger.addHandler(s_handler)
 
 
 class TF2MapLinksDispatch(Dispatch):
